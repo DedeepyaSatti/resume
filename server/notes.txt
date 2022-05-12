@@ -1,0 +1,106 @@
+Bigbasket Application : Full Stack Application
+-----------------------------------------------
+
+Server Side Configuration:
+--------------------------
+In server folder we maintain the folders with files as
+
+1. config -> config.env(environmental variables like hostname,port etc)
+
+2. models -> product.js -> used to connect with mongodb with productSchema by defining all the columns and defining their typesin the database table.
+
+3. node_modules -> install using the command called npm install
+
+4. router -> productRouter.js -> write the code here to perform crud operations.
+
+5. package.json -> npm init --yes
+
+6. server.js -> This file is used to configure cors,express,dotenv,mongodb,router etc
+
+Server Side Setup (Express JS and MongoDB)
+------------------
+express,mongoose,cors,dotenv
+
+* First install package.json -> npm init --yes
+* Next install -> npm install express mongoose cors dotenv
+
+REST API Configuration :
+------------------------
+
+1. GET ALL Products:
+
+URL: http://127.0.0.1:5000/api/products
+METHOD: GET
+Fields: no-Fields
+express function : router.get();
+
+2. GET a single Product
+
+URL: http://127.0.0.1:5000/api/products/:id
+METHOD: GET
+Fields: no-Fields
+express function : router.get();
+
+3. Create a Product
+
+URL: http://127.0.0.1:5000/api/products
+METHOD: POST
+Fields: name,image,price,ty,info
+express function : router.post();
+
+4. Update a Product
+
+URL: http://127.0.0.1:5000/api/products/:id
+METHOD: PUT
+Fields:  name,image,price,ty,info
+express function : router.put();
+
+
+5. Delete a Product
+
+URL: http://127.0.0.1:5000/api/products/:id
+METHOD: DELETE
+Fields:  no-fields
+express function : router.delete();
+
+Database Configuration:
+----------------------
+
+Database : big-Bigbasket
+Table or collection : products
+Fields : 
+name :string,
+image:string,
+price:number,
+qty:number,
+info:string,
+created:date
+
+Create : insertOne() ->save()
+Read : find() -> find()
+Update : updateOne() -> findByIdAndUpdate
+Delete : deleteOne() -> findByIdAndDelete
+
+
+Client-side Coniguration:
+-------------------------
+-> Folder Structure
+--------------------
+   app
+    -> root
+         -> components
+               -> navbar -> ng g c navbar
+               -> home -> ng g c home
+         -> services //not required for current Application
+         -> models //not required for current Application
+    -> Products  -> ng g module module_name --route module_name --module app.module (creating a module)
+    ex:  ng g module products --route products --module app.module
+         -> components
+             -> list-products -> ng g c list-products
+             -> admin -> ng g c admin
+             -> create-product -> ng g c create-product
+             -> update product -> ng g c update-product
+         -> services
+             -> product.service(CRUD Operation) -> ng g s product
+         -> models
+            ->IProduct

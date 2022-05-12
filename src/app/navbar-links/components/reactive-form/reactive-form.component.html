@@ -1,0 +1,67 @@
+<div class="container mt-3">
+  <div class="row">
+      <div class="col-md-8 mx-auto">
+          <div class="card">
+              <div class="card-header">
+                  <h3>Reactive Form</h3>
+              </div>
+              <div class="card-body">
+    <form (ngSubmit)="ss()" [formGroup]="submittingform">
+    <div class="form-group">
+      <label for="username">UserName</label>
+      <input type="text" class="form-control" formControlName="username" pattern="^[A-Za-z][A-Za-z0-9_]{3,16}$" [ngClass]="{ 'is-invalid': submittingform.get('username').touched && submittingform.get('username').errors }" />
+      <span class="text-danger"
+      *ngIf="(submittingform.get('username').touched || submitted) && submittingform.get('username').errors?.required" class="invalid-feedback">
+      Name is required
+  </span>
+
+  <span class="text-danger"
+   *ngIf="submittingform.get('username').errors?.pattern && submittingform.get('username').touched">
+    AlphaNumeric only with min 4 and max 16 characters. Must starts with alphabet.
+  </span>
+  </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" formControlName="mail" pattern="([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,12})+$" [ngClass]="{ 'is-invalid': submittingform.get('mail').touched && submittingform.get('mail').errors }" />
+      <span class="text-danger"
+      *ngIf="(submittingform.get('mail').touched || submitted) && submittingform.get('mail').errors?.required" class="invalid-feedback">
+      Email is required
+  </span>
+
+  <span class="text-danger"
+   *ngIf="submittingform.get('mail').errors?.pattern && submittingform.get('mail').touched">
+    Invalid Email
+  </span>
+
+    
+    </div>
+  
+    <div class="form-group">
+      <label for="course">Course</label>
+      <select class="form-control" formControlName="course">
+        <option value="">Select any option</option>
+        <option value="anglar">Angular</option>
+        <option value="jquery">JQuery</option>
+      </select>
+      <span *ngIf="!submittingform.get('course').valid && submittingform.get('course').touched">
+        <small class="text-danger">Field is Required</small></span>
+    </div>
+  
+    <div class="form-group">
+      <label for="gender">Gender</label><br>
+      <input type="radio" name="gender" value="male" formControlName="gender">Male
+      <input type="radio" name="gender" value="female" formControlName="gender">Female
+      <span *ngIf="!submittingform.get('gender').valid && submittingform.get('gender').touched">
+        <small class="text-danger">Field is Required</small></span>
+    </div>
+  <button type="submit" class="btn-btn-success"  [disabled]="!submittingform.valid">Submit</button>
+    </form>
+    <p>username : {{a}}</p>
+    <p>Email :{{b}}</p>
+    <p>Course :{{c}}</p>
+    <p>Gender : {{d}}</p>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,28 @@
+* How to create a project in FireBase
+-> Open an account in FireBase
+-> Click on get started
+-> Open Add project and give your project name
+-> Click on continue.
+-> Select default account for firebase.
+-> Click on create project.
+
+* How to register the app
+-> when we open our created project we get </> symbol click on it.
+-> we have to register our app and click on ok.
+-> we get some source of code.
+-> In environment.ts file include the code
+const firebaseConfig = {
+ include all the code here
+    }
+    change const firebaseConfig = to firebase :{
+    }
+
+* After completing all these changes in command prompt write commads as
+-> npm install -g firebase-tools
+-> firebase login 
+-> firebase init -> y , hosting: configure files for firebase hosting.....select this option with spacebar ,
+public directory? define as(dist/my_resume) , rewrite all options -> n , github ->n,overwrite ->n
+-> ng build --prod --aot
+-> firebase deploy
+
+-> After the deployment completes we get the hosting URL

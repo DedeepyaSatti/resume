@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-danger navbar-dark">
+    <div class="container">
+        <div class="navbar">
+            <a class="active" href="#"><i class="fa-solid fa-house" style="color:#fff;" ></i></a>
+        
+        </div>
+    <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav mr-auto">
+       
+        
+        <li class="nav-item px-2">
+         <a routerLink="/navbar-links/technical-skills" class="nav-link">Technical Skills</a>
+     </li>
+     <li class="nav-item px-2">
+         <a routerLink="/navbar-links/education" class="nav-link">Education</a>
+     </li>
+     <li class="nav-item px-2">
+         <a routerLink="/navbar-links/work-experience" class="nav-link">Work Experience</a>
+     </li>
+    
+    <li class="nav-item px-2">
+        <a routerLink="/navbar-links/reactive-form" class="nav-link">Reactive Form</a>
+    </li>
+    <li class="nav-item px-2">
+        <a routerLink="/navbar-links/angular-reactive" class="nav-link">Contact Form</a>
+    </li>
+     </ul>
+     
+</div>
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item px-2" *ngIf="!isLogin()"> 
+        <a routerLink="/user/login" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item px-2" *ngIf="!isLogin()">
+        <a routerLink="/user/register" class="nav-link">Register</a>
+    </li>
+    <li class="nav-item px-2" *ngIf="isLogin()">
+        <a routerLink="#" class="nav-link">
+            <img [src]="getUser().avatar" width="25" height="25" class="rounded-circle" alt="">
+            {{getUser().name}}</a>
+    </li>
+    <li class="nav-item px-2" *ngIf="isLogin()" (click)="clickLogOut()"> 
+        <a routerLink="#" class="nav-link">Logout</a>
+    </li>
+   
+</ul>
+    </div>
+  </nav>
