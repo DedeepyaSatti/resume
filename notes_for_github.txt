@@ -1,0 +1,34 @@
+* Firstofall Create a Github account
+-> Create a repository by click on repositories -> click on new -> give repository name -> create Repository
+
+* Initially check if there is any git file exists in our project folder. if it exists delete it.
+
+-> After creating a repository we get some commands we have to execute those in bash.
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main -> instead of mail we are allowed to give master also here
+git remote add origin https://github.com/DedeepyaSatti/my_resume.git
+git push -u origin main
+
+git status
+git add .''
+git commit -m "first push"
+git remote add origin https://github.com/DedeepyaSatti/my_resume.git
+git push -u origin main
+
+* For sharing your data with others go to repositories -> settings -> collabarators -> find a collabarator(add collabarator mail id here)
+
+* In Github pr(Pull Request) used to merge master or main branch for the raised request.
+-> firstofallcreate a new branch -> In realtime every person in a team create their own branch which is used to develop their assigned work through pr everyone
+   shown their project progress to their teamlead.
+-> By creating a seperate branch under the master branch if we make any changes in our project we get those changes in newly created branch only sothat if any  
+   error occur in our newly developed product does not impact the existing one. after testing all the changes you done by newly created branch if it works properly
+   then we have to raise a pr request to the root(master) branch.
+-> When making the changes in our code in subbranch go to main page we get a option (compare & pull request) if we dont  get that option click on pull reqest->
+   new pull request we get the base and compare always makes the base as master and compare as our created branch (base : master, compare:hero) we get all the
+   changes made by us then click create pull request -> give any comment in comment box and click on create pull request.
+-> The pull request is created but the code is not updated in root branch before adding our changes to root branch we have to send the page link to our teamlead
+   he look after all the changes there.
+
+* For creating a new branch in visual studio -> git checkout -b branch-name
